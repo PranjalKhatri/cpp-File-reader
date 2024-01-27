@@ -6,6 +6,7 @@
 #include <iostream>
 #include <iomanip>
 #include <algorithm>
+#include <cctype>
 // using namespace std;
 
 /// @brief Loads the data from csv to floating vectors
@@ -107,6 +108,15 @@ public:
         }
     }
     
+    int name_to_index(std::string name){
+        for(int i =0;i < titles.size();i++){
+            if(titles[i] == name){
+                return i;
+            }
+        }
+        return -1;
+    }
+
     ~DATASET()
     {
         for (auto i : data)
